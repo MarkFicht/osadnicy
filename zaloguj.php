@@ -1,5 +1,7 @@
 <?php
 
+	session_start();
+
 	require_once "connect.php";
 
 	$first_connect = @new mysqli($host, $db_user, $db_password, $db_name);
@@ -24,12 +26,21 @@
 			if ($how_many_user>0) 
 			{
 				$record = $result->fetch_assoc();
-				$user = $record['user'];
+				//$user = $record['user'];
+
+				$_SESSION['user'] = $record['user'];
+				$_SESSION['drewno'] = $record['drewno'];
+				$_SESSION['kamien'] = $record['kamien'];
+				$_SESSION['zboze'] = $record['zboze'];
+				$_SESSION['email'] = $record['email'];
+				$_SESSION['dnipremium'] = $record['dnipremium'];
 
 				//--- Test to get record from table "uzytkownicy" (Is only one table in this DB) ---//
-				echo $user;
+				//echo $user;
 
 				$result->free_result(); // ->close(); || ->free();
+				header('location: game.php');
+				
 			} else {
 
 			}
