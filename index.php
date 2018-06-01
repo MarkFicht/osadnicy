@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	if((isset($_SESSION['online'])) && ($_SESSION['online']==true))
+	{
+		header('Location: game.php');
+		exit();
+	}
+?>
+
 <!DOCTYPE HTML>
 <html lang="pl">
 	<head>
@@ -15,6 +24,10 @@
 			Hasło: <br>  <input type="password" name="haslo" /> <br> <br>
 			<input type="submit" value="Zaloguj się" />
 		</form>
+
+	<?php
+		if(isset($_SESSION['error_login']))	echo $_SESSION['error_login'];
+	?>
 		
 	</body>
 </html>

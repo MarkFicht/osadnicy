@@ -1,5 +1,4 @@
 <?php
-
 	session_start();
 
 	require_once "connect.php";
@@ -25,9 +24,11 @@
 			$how_many_user = $result->num_rows;
 			if ($how_many_user>0) 
 			{
+				$_SESSION['online'] = true;
 				$record = $result->fetch_assoc();
 				//$user = $record['user'];
 
+				$_SESSION['id'] = $record['id'];
 				$_SESSION['user'] = $record['user'];
 				$_SESSION['drewno'] = $record['drewno'];
 				$_SESSION['kamien'] = $record['kamien'];
@@ -38,10 +39,14 @@
 				//--- Test to get record from table "uzytkownicy" (Is only one table in this DB) ---//
 				//echo $user;
 
+				unset($_SESSION['error_login']);
 				$result->free_result(); // ->close(); || ->free();
 				header('location: game.php');
 				
 			} else {
+
+				$_SESSION['error_login'] = '<span style="color:red;">Nieprawidłowy login lub hasło!</span>';
+				header('location: index.php');
 
 			}
 		}
@@ -52,5 +57,4 @@
 	//--- Test with variable reading ---//
 	//echo $login."<br>";
 	//echo $haslo;
-
 ?>
