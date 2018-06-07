@@ -13,17 +13,23 @@
 		<meta charset="utf=8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Osadnicy - gra przeglądarkowa</title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
 	</head>
 
 	<body>
 	
-		Tylko martwi ujrzeli koniec wojny - Platon <br><br>
+	<div id="container">
+		<span id="title1">Tylko martwi ujrzeli koniec wojny</span>
+		<span id="title2">PLATON</span>
 		
 		<form action="zaloguj.php" method="post">
-			Login: <br>  <input type="text" name="login" /> <br>
-			Hasło: <br>  <input type="password" name="haslo" /> <br> <br>
+			<input type="text" name="login" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'" />
+
+			<input type="password" name="haslo" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" />
+
 			<input type="submit" value="Zaloguj się" />
 		</form>
+	</div>
 
 	<?php
 		if(isset($_SESSION['error_login']))	echo $_SESSION['error_login'];

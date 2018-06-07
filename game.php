@@ -1,5 +1,11 @@
 <?php
 	session_start();
+
+	if(!isset($_SESSION['online']))
+	{
+		header('Location: index.php');
+		exit();
+	}
 ?>
 
 <!DOCTYPE HTML>
