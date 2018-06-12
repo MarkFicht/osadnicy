@@ -58,7 +58,7 @@
 				
 			} else {
 
-				$_SESSION['error_login'] = '<span style="color:red; margin-left:auto; margin-right:auto;">Nieprawidłowy login lub hasło!</span>';
+				$_SESSION['error_login'] = '<div class="error">Nieprawidłowy login lub hasło!</div>';
 				header('location: index.php');
 
 			}
