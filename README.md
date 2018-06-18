@@ -15,13 +15,13 @@ In browser at the adress URL: http://localhost/phpmyadmin create empty DB "osadn
 	<li> sanitization and validation code </li>
 	<li> a redirect network, redirection with conditional statement and header() </li>
 	<li> MySQL query with PHP - I learned a few security features: </li>
-	 - if() for checking correct query 
-	 - protection against Injection SQL (e.g. in inputs for Login/Password) 
+	 - if() for checking correct query <br>
+	 - protection against Injection SQL (e.g. in inputs for Login/Password) <br>
 	 - displaying information about errors with query(For Dev and regular user) 
 	<li> hashing with PASSWORD_DEFAULT </li>
 	<li> reCAPTCHA - Implementation in the code </li>
 	<li> instruction try .. catch  -  better error control mechanism </li>
-	 ^ with throw new Exception() 
+	 ^ with throw new Exception(), etc.
 	<li> differences between: require  VS  include </li>
 	<li> method fetch_assoc() </li>
 	<li> a few other basics :) </li>
