@@ -21,7 +21,6 @@
 		$haslo = $_POST['haslo'];
 
 		$login = htmlentities($login, ENT_QUOTES, "UTF-8");
-		$haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
 
 		//--- LogIn test with Database ---//
 		//echo "It works!";
@@ -30,32 +29,34 @@
 		//modified for user security
 
 		if ($result = @$first_connect->query(
-			sprintf("SELECT*FROM uzytkownicy WHERE user='%s' AND pass='%s'",
-			mysqli_real_escape_string($first_connect,$login),
-			mysqli_real_escape_string($first_connect,$haslo))))
+			sprintf("SELECT*FROM uzytkownicy WHERE user='%s'",
+			mysqli_real_escape_string($first_connect,$login))))
 		{
 			$how_many_user = $result->num_rows;
 			if ($how_many_user>0) 
 			{
-				$_SESSION['online'] = true;
 				$record = $result->fetch_assoc();
-				//$user = $record['user'];
 
-				$_SESSION['id'] = $record['id'];
-				$_SESSION['user'] = $record['user'];
-				$_SESSION['drewno'] = $record['drewno'];
-				$_SESSION['kamien'] = $record['kamien'];
-				$_SESSION['zboze'] = $record['zboze'];
-				$_SESSION['email'] = $record['email'];
-				$_SESSION['dnipremium'] = $record['dnipremium'];
+				if (password_verify($haslo, $record['pass']))
+				{
+					$_SESSION['online'] = true;
+					$_SESSION['id'] = $record['id'];
+					$_SESSION['user'] = $record['user'];
+					$_SESSION['drewno'] = $record['drewno'];
+					$_SESSION['kamien'] = $record['kamien'];
+					$_SESSION['zboze'] = $record['zboze'];
+					$_SESSION['email'] = $record['email'];
+					$_SESSION['dnipremium'] = $record['dnipremium'];
 
-				//--- Test to get record from table "uzytkownicy" (Is only one table in this DB) ---//
-				//echo $user;
-
-				unset($_SESSION['error_login']);
-				$result->free_result(); // ->close(); || ->free();
-				header('location: game.php');
-				
+					unset($_SESSION['error_login']);
+					$result->free_result(); // ->close(); || ->free();
+					header('location: game.php');
+				} 
+				else
+				{
+					$_SESSION['error_login'] = '<div class="error">Nieprawidłowy login lub hasło!</div>';
+					header('location: index.php');
+				}
 			} else {
 
 				$_SESSION['error_login'] = '<div class="error">Nieprawidłowy login lub hasło!</div>';
