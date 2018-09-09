@@ -3,11 +3,21 @@
 Learning PHP and MySQL with XAMPP and phpmyadmin.<br>
 In this project I create login panel, which can gets, sent and check data from DataBase.
 
-All files were in folder: xampp>htdocs>osadnicy<br>
-For corrected working, we must run XAMPP Control Panel and start Apache + MySQL<br>
-In browser at the adress URL: http://localhost/phpmyadmin create empty DB "osadnicy" and import file "uzytkownicy.sql"
+### Installation and configuration
 
-<p><b>What I have learned in this project</b></p>
+You need instal localhost, XAMPP. <br>
+All files were in folder: xampp/htdocs/osadnicy <br>
+For corrected working, we must run XAMPP Control Panel and start 2 options: Apache + MySQL<br>
+In browser at the adress URL: http://localhost/phpmyadmin create empty DB "osadnicy" and import file "uzytkownicy.sql" from our repo.
+
+## Built of ...
+
+- [Clear PHP, without frameworks]
+- [MySQL]
+- [HTML, CSS]
+
+## What I discovered
+<ul>
 	<li> I met global variable $_SESSION </li>
 	<li> opening session and very important closing that one </li>
 	<li> session time </li>
@@ -25,4 +35,5 @@ In browser at the adress URL: http://localhost/phpmyadmin create empty DB "osadn
 	<li> differences between: require  VS  include </li>
 	<li> method fetch_assoc() </li>
 	<li> a few other basics :) </li>
+</ul>
 
