@@ -8,7 +8,7 @@ In this project I create login panel, which can gets, sent and check data from D
 You need instal localhost, XAMPP. <br>
 All files were in folder: xampp/htdocs/osadnicy <br>
 For corrected working, we must run XAMPP Control Panel and start 2 options: Apache + MySQL<br>
-In browser at the adress URL: http://localhost/phpmyadmin create empty DB "osadnicy" and import file "uzytkownicy.sql" from our repo.
+In URL: http://localhost/phpmyadmin create empty DB "osadnicy" and import file "uzytkownicy.sql" from our repo.
 
 ## Built of ...
 
@@ -24,10 +24,13 @@ In browser at the adress URL: http://localhost/phpmyadmin create empty DB "osadn
 	<li> connected with DB - checking, inserting, getting </li>
 	<li> sanitization and validation code </li>
 	<li> a redirect network, redirection with conditional statement and header() </li>
-	<li> MySQL query with PHP - I learned a few security features: </li>
-	 - if() for checking correct query <br>
-	 - protection against Injection SQL (e.g. in inputs for Login/Password) <br>
-	 - displaying information about errors with query(For Dev and regular user) 
+	<li> MySQL query with PHP - I learned a few security features: 
+		<ul>
+			<li> if() for checking correct query </li> 
+	 		<li> protection against Injection SQL (e.g. in inputs for Login/Password) </li> 
+	 		<li> displaying information about errors with query(For Dev and regular user) </li> 
+		</ul>
+	</li>
 	<li> hashing with PASSWORD_DEFAULT </li>
 	<li> reCAPTCHA - Implementation in the code </li>
 	<li> instruction try .. catch  -  better error control mechanism </li>
