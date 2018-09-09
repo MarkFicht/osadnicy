@@ -33,10 +33,18 @@ In URL: http://localhost/phpmyadmin create empty DB "osadnicy" and import file "
 	</li>
 	<li> hashing with PASSWORD_DEFAULT </li>
 	<li> reCAPTCHA - Implementation in the code </li>
-	<li> instruction try .. catch  -  better error control mechanism </li>
-	 ^ with throw new Exception(), etc.
+	<li> instruction try .. catch  -  better error control mechanism 
+		<ul>
+			<li> with throw new Exception(), etc. </li>
+		</ul>
+	</li>
 	<li> differences between: require  VS  include </li>
 	<li> method fetch_assoc() </li>
 	<li> a few other basics :) </li>
 </ul>
+
+## Further idea for development
+
+In the future I will learn more about Back-end. I am thinking about choosing between: PHP or NodeJS or mastering Firebase. </br>
+I am currently focusing on technologies from the frontend, but the goal is, to stay full stack.
 
